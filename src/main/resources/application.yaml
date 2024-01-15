@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    connectionConfigModels:
+      - name: db1
+        url: jdbc:postgresql://localhost:5434/db1
+        username: postgres
+        password: postgres
+        table: users
+        mapping:
+          id: user_id
+          username: login
+          name: first_name
+          surname: last_name
+      - name: db2
+        url: jdbc:postgresql://localhost:5433/db2
+        username: postgres
+        password: postgres
+        table: user_table
+        mapping:
+          id: ldap_id
+          username: ldap_login
+          name: name
+          surname: surname

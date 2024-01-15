@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres-db1:
+    image: postgres:latest
+    container_name: postgres-db1
+    environment:
+      POSTGRES_DB: db1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    networks:
+      - app-network
+
+  postgres-db2:
+    image: postgres:latest
+    container_name: postgres-db2
+    environment:
+      POSTGRES_DB: db2
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
